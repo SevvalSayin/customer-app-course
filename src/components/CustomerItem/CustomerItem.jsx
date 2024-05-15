@@ -1,15 +1,34 @@
+/* import styled from "styled-components"; */
+/* import "./CustomerItem.css"; */
+import styles from "./CustomerItem.module.css"
+
+/* const DeleteButton = styled.button`
+  background-color: red;
+  padding: 8px;
+  transition: opacity 0.5s ease;
+
+  &:hover {
+    opacity: 0.5;
+  }
+`;
+ */
 const CustomerItem = ({ customer, handleDelete }) => {
+console.log(styles);
+
   return (
-    <li className="customer-item">
-      <div className="customer-info">
+    <li className={styles.customerItem}>
+      <div className={styles.customerInfo}>
         <img
           src="https://i.pravatar.cc/300"
           alt=""
-          className="customer-avatar"
+          className={styles.customerAvatar}
         />
-        <span className="customer-name">{customer.customerName}</span>
+        <span className={styles.customerName}>{customer.customerName}</span>
       </div>
-      <button className="delete-button" onClick={() => handleDelete(customer)}>
+      <button
+        className={styles.deleteButton}
+        onClick={() => handleDelete(customer)}
+      >
         <i className="bi bi-trash3"></i>
       </button>
     </li>
